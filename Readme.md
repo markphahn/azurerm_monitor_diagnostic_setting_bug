@@ -12,9 +12,14 @@ terraform apply
 # then again
 terraform plan
 ```
+
+The first run of plan/apply will create all the resources properly, including 
+the `azurerm_monitor_diagnostic_setting` resource.
+
 The second invocation of `terraform plan` will show that it has decided that 
 `azurerm_monitor_diagnostic_setting.edw_monitor_adf_ingestion_activties will be updated in-place`
-and also `azurerm_monitor_diagnostic_setting.edw_monitor_adf_ingestion_metrics will be updated in-place`.
+and also `azurerm_monitor_diagnostic_setting.edw_monitor_adf_ingestion_metrics will be updated in-place`
+(see below for the full plan output).
 
 You can endlessly run:
 ```
