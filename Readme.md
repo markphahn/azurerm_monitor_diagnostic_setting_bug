@@ -1,4 +1,4 @@
-# Demonstration oof bug with `azurerm_monitor_diagnostic_setting`
+# Demonstration of bug with `azurerm_monitor_diagnostic_setting`
 
 ## Problem
 
@@ -12,7 +12,7 @@ terraform apply
 # then again
 terraform plan
 ```
-The second invoocation of `terraform plan` will show that it has decided that 
+The second invocation of `terraform plan` will show that it has decided that 
 `azurerm_monitor_diagnostic_setting.edw_monitor_adf_ingestion_activties will be updated in-place`
 and also `azurerm_monitor_diagnostic_setting.edw_monitor_adf_ingestion_metrics will be updated in-place`.
 
