@@ -288,3 +288,7 @@ Plan: 0 to add, 2 to change, 0 to destroy.
 
 
 ```
+
+## Cross reference
+
+See: https://github.com/hashicorp/terraform-provider-azurerm/issues/17172
