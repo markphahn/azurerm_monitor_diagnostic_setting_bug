@@ -2,8 +2,15 @@
 
 ## Problem
 
-This module will always attempt to change any `azurerm_monitor_diagnostic_setting`
-resources defined. 
+When using the Terraform `azurerm` provider and attempting to
+create/manage `azurerm_monitor_diagnostic_setting` resources (to tell
+an Azure resource too send logs to Log Analytics, for instance) the
+module will always attempt to change any
+`azurerm_monitor_diagnostic_setting` resources defined.
+
+Reference: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting
+
+## Reproduce Steps
 
 To reproduce do the following:
 ```
