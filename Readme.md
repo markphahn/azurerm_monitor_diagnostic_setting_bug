@@ -13,6 +13,12 @@ Reference: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 ## Reproduce Steps
 
 To reproduce do the following:
+
+#1 Check out this repository and `cd` into the direcotry
+
+#2 Run `terraform init` in this directory.
+
+#2 Run these commands:
 ```
 terraform plan
 terraform apply
