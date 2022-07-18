@@ -6,8 +6,8 @@ resource has the ability to set several
 `azurerm_monitor_diagnostic_setting` categories, then they all must be
 set in the `azurerm_monitor_diagnostic_setting` resource definition.
 
-For example, for a data factory resource, you can
-list the categories of diagnostic categories available"
+For example, for a specific resource like my example data factory resource, you can
+list the categories of diagnostic categories available:
 ```
 az monitor diagnostic-settings categories list --resource /subscriptions/<subscription id>/resourceGroups/edw-dev-azurerm-monitor-diagnostic-setting-bug/providers/Microsoft.DataFactory/factories/edw-dev-factory 
 ```
@@ -35,7 +35,9 @@ Each of those items must be specified in your
 `azurerm_monitor_diagnostic_setting` resource. If you do not provide
 an explicit setting, then the terraform provdier will set reasonable
 defaults. But then the next time it reads you defintion (during plan)
-the defaults will not match what is in your resource definition. 
+the defaults will not match what is in your resource definition
+(because your definition looks like it has nulls instead of the
+default values). 
 
 E.g. I fixed my `azurerm_monitor_diagnostic_setting` resource setting for
 my data factory resource by changing it from this
@@ -58,7 +60,8 @@ resource "azurerm_monitor_diagnostic_setting" "edw_monitor_adf_ingestion" {
   }
 }
 ```
-to this:
+to this which specifies every posssible diagnostic category from the
+category list from the `az` command above:
 ```
 resource "azurerm_monitor_diagnostic_setting" "edw_monitor_adf_ingestion" {
   name                          = "edw-dev-diagnostics-adf-igestion"
@@ -183,7 +186,11 @@ specific definition in my `azurerm_monitor_diagnostic_setting`
 resource which matched the actual Azure definition set by the
 provider. 
 
-
+As a further example, you can find all the categories you need to list
+for a firewall resource with this command:
+```
+ az monitor diagnostic-settings categories list --resource /subscriptions/<subscription id>/resourceGroups/edw-dev-azurerm-monitor-diagnostic-setting-bug/providers/Microsoft.Network/azureFirewalls/testfirewall | grep name
+```
 
 This `azurerm_monitor_diagnostic_setting` resource, when applied set
 default values for any other catetories listed in the `az monitor diagnostic-settings categories list`
