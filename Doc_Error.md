@@ -190,7 +190,23 @@ As a further example, you can find all the categories you need to list
 for a firewall resource with this command:
 ```
  az monitor diagnostic-settings categories list --resource /subscriptions/<subscription id>/resourceGroups/edw-dev-azurerm-monitor-diagnostic-setting-bug/providers/Microsoft.Network/azureFirewalls/testfirewall | grep name
+      "name": "AzureFirewallApplicationRule",
+      "name": "AzureFirewallNetworkRule",
+      "name": "AzureFirewallDnsProxy",
+      "name": "AZFWNetworkRule",
+      "name": "AZFWApplicationRule",
+      "name": "AZFWNatRule",
+      "name": "AZFWThreatIntel",
+      "name": "AZFWIdpsSignature",
+      "name": "AZFWDnsQuery",
+      "name": "AZFWFqdnResolveFailure",
+      "name": "AZFWApplicationRuleAggregation",
+      "name": "AZFWNetworkRuleAggregation",
+      "name": "AZFWNatRuleAggregation",
+      "name": "AllMetrics",
 ```
+
+## More information
 
 This `azurerm_monitor_diagnostic_setting` resource, when applied set
 default values for any other catetories listed in the `az monitor diagnostic-settings categories list`

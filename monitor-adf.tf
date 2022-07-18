@@ -10,61 +10,109 @@ resource "azurerm_monitor_diagnostic_setting" "edw_monitor_adf_ingestion" {
   log {
     category                    = "ActivityRuns"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   log {
     category                    = "PipelineRuns"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   log {
     category                    = "TriggerRuns"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
 
   log {
     category                    = "SandboxActivityRuns"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   log {
     category                    = "SandboxPipelineRuns"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   log {
     category                    = "SSISPackageEventMessages"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   log {
     category                    = "SSISPackageExecutableStatistics"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   log {
     category                    = "SSISPackageEventMessageContext"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   log {
     category                    = "SSISPackageExecutionComponentPhases"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   log {
     category                    = "SSISPackageExecutionDataStatistics"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   log {
     category                    = "SSISIntegrationRuntimeLogs"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 
   metric {
     category                    = "AllMetrics"
     enabled                     = true
+    retention_policy {
+      days                      = 0
+      enabled                   = false
+    }
   }
 }

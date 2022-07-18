@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "example" {
   name                        = "edw-dev-azurerm-monitor-diagnostic-setting-bug"
   location                    = "southcentralus"
 
