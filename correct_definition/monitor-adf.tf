@@ -1,7 +1,7 @@
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting
 
 resource "azurerm_monitor_diagnostic_setting" "edw_monitor_adf_ingestion" {
-  name                          = "edw-dev-diagnostics-adf-igestion"
+  name                          = "correct-diagnostics-adf-igestion"
   target_resource_id            = azurerm_data_factory.edw_factory.id
 
   log_analytics_workspace_id    = azurerm_log_analytics_workspace.edw_log_analytics_workspace.id

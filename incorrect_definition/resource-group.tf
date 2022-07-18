@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "example" {
-  name                        = "edw-dev-azurerm-monitor-diagnostic-setting-bug"
+  name                        = "azurerm-monitor-diagnostic-incorrect"
   location                    = "southcentralus"
 
   tags                        = local.common_tags

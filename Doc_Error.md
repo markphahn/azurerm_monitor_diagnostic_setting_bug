@@ -186,8 +186,10 @@ specific definition in my `azurerm_monitor_diagnostic_setting`
 resource which matched the actual Azure definition set by the
 provider. 
 
-As a further example, you can find all the categories you need to list
-for a firewall resource with this command:
+As a further example, using the firewall definition referenced in at
+the beginning of this issue, you can find all the categories you need
+to list for a firewall resource with this command:
+
 ```
  az monitor diagnostic-settings categories list --resource /subscriptions/<subscription id>/resourceGroups/edw-dev-azurerm-monitor-diagnostic-setting-bug/providers/Microsoft.Network/azureFirewalls/testfirewall | grep name
       "name": "AzureFirewallApplicationRule",
@@ -206,31 +208,5 @@ for a firewall resource with this command:
       "name": "AllMetrics",
 ```
 
-## More information
-
-This `azurerm_monitor_diagnostic_setting` resource, when applied set
-default values for any other catetories listed in the `az monitor diagnostic-settings categories list`
-command above. That is, default settings will be create for
-`PipelineRuns`, `TriggerRuns` and all the rest.
-
-Once you set your single category, you can check the settings that
-have be applied to your `azurerm_monitor_diagnostic_setting` using the
-`az monitor diagnostic-settings list` command. E.g.
-```
-az monitor diagnostic-settings list --resource /subscriptions/<subscription id>/resourceGroups/edw-dev-azurerm-monitor-diagnostic-setting-bug/providers/Microsoft.DataFactory/factories/edw-dev-factory
-```
-
-For example I would see these settings for `PipelineRuns`:
-```
-        {
-          "category": "PipelineRuns",
-          "categoryGroup": null,
-          "enabled": false,
-          "retentionPolicy": {
-            "days": 0,
-            "enabled": false
-          }
-        },
-
-```
-Even though no such definiton exists in my file.
+For more information and a demonstration see:
+https://github.com/markphahn/azurerm_monitor_diagnostic_setting_bug
