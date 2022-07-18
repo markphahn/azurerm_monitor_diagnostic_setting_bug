@@ -1,7 +1,8 @@
 # Documentation error description
 
-This appears to be a documentation error, as pointed out by my son. It
-appears that if a given resource has the ability to set several
+This appears to be a documentation error, as pointed out by my
+[son](https://github.com/GauntletWizard/).  It appears that if a given
+resource has the ability to set several
 `azurerm_monitor_diagnostic_setting` categories, then they all must be
 set in the `azurerm_monitor_diagnostic_setting` resource definition.
 
