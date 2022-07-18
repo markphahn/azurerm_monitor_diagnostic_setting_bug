@@ -14,9 +14,9 @@ Reference: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 
 To reproduce do the following:
 
-#1 Check out this repository and `cd` into the `incorrect-definition` direcotry
+#1 Check out this repository and `cd` into the `incorrect-definition` directory
 
-#2 Run `terraform init` in this directory.
+#2 Run `terraform init` in this directory
 
 #2 Run these commands:
 ```
@@ -297,9 +297,9 @@ Plan: 0 to add, 2 to change, 0 to destroy.
 
 You need to fully specify all the possible diagnostic catetories in
 the `azurerm_monitor_diagnostic_setting` resource definition in
-terraform. See the `correct_definition` folder, like this:
+terraform. See the `correct_definition` directory, like this:
 
-#1 `cd` to the `correct_definition` 
+#1 `cd` to the `correct_definition` directory
 
 #2 Run `terraform init`
 
