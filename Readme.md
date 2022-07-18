@@ -285,9 +285,13 @@ Terraform will perform the following actions:
     }
 
 Plan: 0 to add, 2 to change, 0 to destroy.
-
-
 ```
+
+## Solution
+
+This appears to be a documenation error. All diagnostic categories
+need to be specified in the resource definition. See the file
+[Doc_Error.md](Doc_Error.md).
 
 ## Cross reference
 
